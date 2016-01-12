@@ -1,16 +1,17 @@
 # your code goes here
 def process_user_input():
-    """Asks the user for restaurant and rating untill user quits"""
+    """Asks the user for restaurant and rating until user quits"""
+    
     user_data = {}
 
     while True:
-        user_prompt = raw_input("Would you like to add a restaurant rating? y/n")
+        user_prompt = raw_input("Would you like to add a restaurant rating? y/n ")
         if user_prompt.lower() == "n":
             return user_data
             break
         elif user_prompt.lower() == "y":
-            user_input_restaurant = raw_input("Please enter a restaurant")
-            user_input_score = raw_input("Please enter a restarant score")
+            user_input_restaurant = raw_input("Please enter a restaurant: ")
+            user_input_score = raw_input("Please enter a restarant score: ")
             user_data[user_input_restaurant] = user_input_score
         else:
             print "This is not a valid answer"
