@@ -1,32 +1,22 @@
 # your code goes here
 
 
-# sort by [0]
-
 def alphabetized_restaurant_ratings(filename):
     """Returns each restaurant and its rating, in alphabetical order"""
 
     restaurant_log = open(filename)
 
-    alphabetized_data = []
+    raw_data = {}
 
     for line in restaurant_log:
         line = line.rstrip()
         data = line.split(":")
-        alphabetized_data.append(data)
+        raw_data[data[0]] = data[1]
 
-    #result = alphabetized_data.sort(key= lambda row: row[0])
-    result = sorted(alphabetized_data, key= lambda row: row[0])
-    print result
+    result = sorted(raw_data.items(), key = lambda row: row[0])
 
- 
-
-
-
-
-
-    #for data[0] in data:
-
+    for restaurant in result:
+        print "%s is rated at %s." % (restaurant[0], restaurant[1])
 
 
 alphabetized_restaurant_ratings("scores.txt")
